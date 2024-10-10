@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <style>
+        .user-profile {
+            background-color: #f3f5f7;
+            max-width: 480px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+        .header-image {
+            aspect-ratio: 8.55;
+            object-fit: contain;
+            object-position: center;
+            width: 100%;
+            align-self: center;
+          }
+        .profile-content {
+            text-align: center;
+            padding: 10px;
+        }
+        .notification-logo {
+            background-color: #f3f5f7;
+            display: flex;
+            width: 90%;
+            padding: 7px 13px;
+          }
+          
+          .logo {
+            aspect-ratio: 3.73;
+            object-fit: contain;
+            object-position: center;
+            width: 112px;
+            max-width: 100%;
+          }
+          .user-greeting {
+            display: flex;
+            margin-top: 20px;
+            width: 100%;
+            gap: 26px;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #000;
+            line-height: 1.4;
+            padding: 4px 75px 4px 13px;
+          }    
+          .greeting-text {
+            display: flex;
+            gap: 7px;
+            margin: auto 0;
+          }
+          .user-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+          }
+          
+          .greeting {
+            font-size: 16px;
+            font-weight: 500;
+          }
+         
+    .plan-section {
+        align-self: center;
+        display: flex;
+        margin-top: 20px;
+        margin:0 auto;
+        width: 400px;
+        max-width: 100%;
+        flex-direction: column;
+      }
+      
+      .current-plan {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      
+      .plan-title {
+        color: #000;
+        font-size: 16px;
+        font-weight: 700;
+        margin-left: 10px;
+      }
+      
+      .plan-details {
+        display: flex;
+        margin-top: 9px;
+        width: 100%;
+        flex-direction: column;
+        font-size: 12px;
+        color: #727680;
+        font-weight: 500;
+      }
+      
+      .plan-card {
+        border-radius: 15px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 19px 29px;
+      }
+      
+      .plan-info {
+        display: flex;
+        width: 168px;
+        max-width: 100%;
+        flex-direction: column;
+      }
+      
+      .plan-logo {
+        aspect-ratio: 3.83;
+        object-fit: contain;
+        object-position: center;
+        width: 46px;
+      }
+      
+      .plan-name {
+        margin-top: 4px;
+        font-weight: bold;
+      }
+      
+      .plan-description {
+        color: #000;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 4px;
+      }
+      
+      .plan-features {
+        display: flex;
+        margin-top: 2px;
+        align-items: center;
+        gap: 10px;
+        justify-content: start;
+      }
+
+      .feature {
+        font-weight: 400;
+        line-height: 24px;
+        align-self: stretch;
+        margin: auto 0;
+        white-space: nowrap
+      }
+      
+      .feature-separator {
+        background-color: #727680;
+        align-self: stretch;
+        width: 0;
+        height: 11px;
+        margin: auto 0;
+        border: 1px solid #727680;
+      }
+      
+      .plan-price {
+        color: #24945e;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 4px;
+      }
+      
+      .plan-conditions {
+        display: flex;
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+        .conditions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .edit-button {
+            padding: 5px 10px;
+            font-size: 12px;
+            color: white;
+            background-color: #24945e;
+            border: none;
+            border-radius: 8px;
+        }
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .condition-item {
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-top:5px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 12px;
+            justify-content: center
+        }
+        .condition-icon {
+            width: 25px;
+            margin-top: 10px;
+            
+        }
+        .condition-label {
+            color: #555;
+        }
+        .condition-value {
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        @media (max-width: 640px) {
+            .plan-info {
+              width: 109%;
+            }
+          
+            .plan-features {
+              margin-right: 6px;
+              align-self: stretch;
+            }
+          
+            .condition-item {
+              border-radius: 15px;
+            }
+          
+            .conditions-row:last-child {
+              display: none;
+            }
+          }
+    </style>
+</head>
+<body>
+
+<section class="user-profile">
+    <header>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28a143fa78bea6d892387ba21e73dcc174f49d1433706700a144ed6aefb863d6?placeholderIfAbsent=true&apiKey=b428f72577a944efb870ba20e4731845" alt="Header image" class="header-image">
+        <div class="profile-content">
+          <div class="notification-logo">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0debf66160c9e2b6aacba4b77145a7d6d1a28b64eb948cf0ddd1b602b1e43099?placeholderIfAbsent=true&apiKey=b428f72577a944efb870ba20e4731845" alt="Notification logo" class="logo">
+          </div>
+          <div class="user-greeting">
+            <div class="greeting-text">
+              <h2 class="user-name">하민지</h2>
+              <p class="greeting">님 안녕하세요</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="plan-section">
+        <section class="current-plan">
+          <h3 class="plan-title">사용중인 요금제</h3>
+          <div class="plan-details">
+            <div class="plan-card">
+              <div class="plan-info">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8cdd817be9478db8c8879cbae1e7bbdf2a22b044d7af61a5400cee942b805277?placeholderIfAbsent=true&apiKey=b428f72577a944efb870ba20e4731845" alt="Plan logo" class="plan-logo">
+                <p class="plan-name">핀다이렉트Z Light</p>
+                <p class="plan-description">월 15GB + 3Mpbs</p>
+                <div class="plan-features">
+                  <span class="feature">통화 100분</span>
+                  <span class="feature-separator"></span>
+                  <span class="feature">문자 100건</span>
+                  <span class="feature-separator"></span>
+                  <span class="feature">KT망</span>
+                  <span class="feature-separator"></span>
+                  <span class="feature">LTE</span>
+                </div>
+                <p class="plan-price">월 17,050원</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+    <section class="plan-section">
+        <div class="conditions-header">
+            <h3 class="plan-title">설정된 요금제 변경 조건</h3>
+            <button class="edit-button">수정하기</button>
+        </div>
+        <div class="conditions-grid">
+            <div class="condition-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d9205ccad25410ae07ab7b0a03897e30e4ac3f9d770564bdd58ba53137d000b?placeholderIfAbsent=true&apiKey=b428f72577a944efb870ba20e4731845" alt="데이터량" class="condition-icon">
+                <p class="condition-label">데이터량</p>
+                <p class="condition-value">50GB</p>
+            </div>
+            <div class="condition-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d345c9d5a2d76a14561f0afcae8cd9aa7384b78a1d4308e2dab6006ed2da4f5?placeholderIfAbsent=true&apiKey=54b650ec0d994a2bb430ca7e4a034e58" alt="문자량" class="condition-icon">
+                <p class="condition-label">문자량</p>
+                <p class="condition-value">250건</p>
+            </div>
+            <div class="condition-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b15f4703c5b4e31f2366f01f035c35b7669938deb8c801da60c8f84bbf6438b9?placeholderIfAbsent=true&apiKey=54b650ec0d994a2bb430ca7e4a034e58" alt="통화량" class="condition-icon">
+                <p class="condition-label">통화량</p>
+                <p class="condition-value">1500분</p>
+            </div>
+            <div class="condition-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e1396bd7432c7b221eabc2cb865784dc845cf78dbb0a2d350529ab3617703a12?placeholderIfAbsent=true&apiKey=b428f72577a944efb870ba20e4731845" alt="소진시 속도" class="condition-icon">
+                <p class="condition-label">소진시 속도</p>
+                <p class="condition-value">1Mbps 미만</p>
+            </div>
+            <div class="condition-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5931c80ac5e50baec092d3f7ad5d7a80defd3270ef389a1c09f7e4629b914fea?placeholderIfAbsent=true&apiKey=54b650ec0d994a2bb430ca7e4a034e58" alt="통신기술" class="condition-icon">
+                <p class="condition-label">통신기술</p>
+                <p class="condition-value">5G</p>
+            </div>
+            <div class="condition-item">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e65ce9eb68b36538d995d96995547c52d10dab6dcb577174f9ba9d254e707094?placeholderIfAbsent=true&apiKey=b428f72577a944efb870ba20e4731845" alt="통신망" class="condition-icon">
+                <p class="condition-label">통신망</p>
+                <p class="condition-value">SKT망, KT망</p>
+            </div>
+        </div>
+    </section>
+</section>
+
+</body>
+</html>
